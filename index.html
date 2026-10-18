@@ -7,10 +7,11 @@
     <title>Cognisee — Artificial Collective Intelligence</title>
     <meta name="description" content="AI should make people and institutions more capable, not less. Cognisee builds cognitive infrastructure for Artificial Collective Intelligence." />
     
-    <link rel="icon" type="image/png" href="/assets/logos/cognisee-symbol-white-transparent-1600.png" />
+    <link rel="icon" type="image/png" href="%BASE_URL%assets/logos/cognisee-symbol-white-transparent-1600.png" />
     <script>
-      if (window.location.pathname !== '/' && !window.location.pathname.startsWith('/api')) {
-        window.history.replaceState(null, '', '/' + window.location.search + window.location.hash);
+      window.__BASE_PATH__ = '%BASE_URL%';
+      if (window.location.pathname !== '/' && !window.location.pathname.startsWith('/api') && !window.location.pathname.startsWith('/cognisee')) {
+        window.history.replaceState(null, '', '%BASE_URL%' + window.location.search + window.location.hash);
       }
     </script>
     

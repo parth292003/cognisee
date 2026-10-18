@@ -52,11 +52,13 @@ export const App: React.FC = () => {
     handleHash();
 
     // Dynamically load the reverse-engineered Igloo engine exactly once
-    if (!iglooEngineLoaded && !document.querySelector('script[src="/igloo_index.js"]')) {
+    const base = (import.meta.env.BASE_URL || '/').replace(/\/$/, '');
+    const scriptSrc = `${base}/igloo_index.js`;
+    if (!iglooEngineLoaded && !document.querySelector(`script[src="${scriptSrc}"]`)) {
       iglooEngineLoaded = true;
       const script = document.createElement('script');
       script.type = 'module';
-      script.src = '/igloo_index.js';
+      script.src = scriptSrc;
       document.body.appendChild(script);
     }
 
@@ -66,6 +68,8 @@ export const App: React.FC = () => {
       clearInterval(interval);
     };
   }, [detailState.isOpen, detailState.index]);
+
+  const base = (import.meta.env.BASE_URL || '/').replace(/\/$/, '');
 
   return (
     <div className="relative w-full h-full select-none">
@@ -80,7 +84,7 @@ export const App: React.FC = () => {
           title="Cognisee — Artificial Collective Intelligence"
         >
           <img
-            src="/assets/logos/cognisee-logo-horizontal-white-transparent-3000w.png"
+            src={`${base}/assets/logos/cognisee-logo-horizontal-white-transparent-3000w.png`}
             alt="Cognisee"
             className="h-9 sm:h-10 md:h-11 w-auto object-contain drop-shadow-[0_2px_16px_rgba(0,0,0,0.7)] group-hover:opacity-85 transition-opacity"
           />

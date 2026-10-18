@@ -300,7 +300,7 @@ export const FoundingTeamCarousel: React.FC<FoundingTeamCarouselProps> = ({ isVi
         <div className="mb-6">
           <img
             key={currentMember.photoUrl}
-            src={currentMember.photoUrl}
+            src={currentMember.photoUrl.startsWith('http') ? currentMember.photoUrl : `${(import.meta.env.BASE_URL || '/').replace(/\/$/, '')}${currentMember.photoUrl}`}
             alt={currentMember.name}
             onError={(e) => {
               (e.target as HTMLElement).style.display = 'none';
