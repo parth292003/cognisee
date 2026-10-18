@@ -8353,7 +8353,7 @@ class wF{constructor(e){window.__particleRoom=this,this.scene=e,this.ready=new P
     const img = new Image();
     const videoTex = new Rt(img);
     img.onload = () => { videoTex.needsUpdate = true; };
-    img.src = "/youtube_thumb.jpg";
+    img.src = ((window.__BASE_PATH__||"/").replace(/\/$/,"")+"/youtube_thumb.jpg");
     const cardGeom = new kt(0.70, 0.394);
     cardGeom.rotateY(Math.PI);
     const cardMat = new fe({
