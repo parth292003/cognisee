@@ -10,7 +10,7 @@
     <link rel="icon" type="image/png" href="%BASE_URL%assets/logos/cognisee-symbol-white-transparent-1600.png" />
     <script>
       window.__BASE_PATH__ = '%BASE_URL%';
-      if (window.location.pathname !== '/' && !window.location.pathname.startsWith('/api') && !window.location.pathname.startsWith('/cognisee')) {
+      if (window.location.pathname.includes('/portfolio/')) {
         window.history.replaceState(null, '', '%BASE_URL%' + window.location.search + window.location.hash);
       }
     </script>

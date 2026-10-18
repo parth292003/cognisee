@@ -3,9 +3,10 @@ import ReactDOM from 'react-dom/client';
 import { App } from './App';
 import './index.css';
 
-// Always normalize path to / so refreshing always starts at the home experience
-if (window.location.pathname !== '/' && !window.location.pathname.startsWith('/api')) {
-  window.history.replaceState(null, '', '/' + window.location.search + window.location.hash);
+// Normalize URL path to basePath so refreshing always starts cleanly
+const basePath = import.meta.env.BASE_URL || '/';
+if (window.location.pathname.includes('/portfolio/')) {
+  window.history.replaceState(null, '', basePath + window.location.search + window.location.hash);
 }
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
