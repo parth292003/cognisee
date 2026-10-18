@@ -1,0 +1,34 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Production build
+dist/
+build/
+
+# Large video files (>100MB cannot be pushed to GitHub without LFS)
+*.mp4
+*.mov
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Root screenshots
+Screenshot*.png
+ChatGPT Image*.png
+
+# Logs and scratch
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.tempmediaStorage/
+.idea/
+.vscode/

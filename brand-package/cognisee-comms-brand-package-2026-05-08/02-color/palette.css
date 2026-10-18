@@ -1,0 +1,77 @@
+:root,
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --cognisee-background: #091a11;
+  --cognisee-background-top: #13231a;
+  --cognisee-background-mid: #0b1a12;
+  --cognisee-background-bottom: #07140e;
+
+  --cognisee-text: #f4ede1;
+  --cognisee-heading: #f6efe5;
+  --cognisee-body: rgba(244, 237, 225, 0.78);
+  --cognisee-muted: rgba(244, 237, 225, 0.66);
+  --cognisee-quiet: rgba(244, 237, 225, 0.5);
+  --cognisee-line: rgba(244, 237, 225, 0.14);
+  --cognisee-line-strong: rgba(244, 237, 225, 0.3);
+
+  --cognisee-accent: #a6d4bd;
+  --cognisee-green-accent: #b7de9d;
+  --cognisee-amber: #f1be73;
+
+  --cognisee-selection-bg: #b7de9d;
+  --cognisee-selection-text: #091a11;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+
+  --cognisee-background: #f6f5eb;
+  --cognisee-background-top: #fbf9ef;
+  --cognisee-background-bottom: #eef2e4;
+
+  --cognisee-text: #1c2922;
+  --cognisee-heading: #142019;
+  --cognisee-body: rgba(28, 41, 34, 0.78);
+  --cognisee-muted: rgba(28, 41, 34, 0.62);
+  --cognisee-quiet: rgba(28, 41, 34, 0.48);
+  --cognisee-line: rgba(28, 41, 34, 0.14);
+  --cognisee-line-strong: rgba(28, 41, 34, 0.28);
+
+  --cognisee-accent: #286f61;
+  --cognisee-green-accent: #577f67;
+  --cognisee-amber: #9d6619;
+
+  --cognisee-selection-bg: #2f6f61;
+  --cognisee-selection-text: #fffaf0;
+}
+
+.cognisee-night-background {
+  background:
+    radial-gradient(
+      ellipse 1180px 760px at 50% 3%,
+      rgba(112, 143, 115, 0.18) 0%,
+      rgba(31, 64, 43, 0.31) 34%,
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse 900px 420px at 50% -18%,
+      rgba(244, 237, 225, 0.105) 0%,
+      rgba(183, 222, 157, 0.055) 38%,
+      transparent 68%
+    ),
+    linear-gradient(180deg, #13231a 0%, #0b1a12 44%, #07140e 100%);
+}
+
+.cognisee-light-background {
+  background:
+    radial-gradient(
+      circle at 50% -9%,
+      rgba(255, 255, 250, 0.98) 0%,
+      rgba(255, 253, 243, 0.92) 19%,
+      rgba(246, 250, 235, 0.74) 38%,
+      rgba(222, 236, 216, 0.3) 62%,
+      transparent 79%
+    ),
+    linear-gradient(180deg, #fbf9ef 0%, #f6f5eb 46%, #eef2e4 100%);
+}

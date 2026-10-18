@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cognisee Palette Preview</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: "IBM Plex Sans", system-ui, sans-serif;
+        background: #f6f5eb;
+        color: #1c2922;
+      }
+
+      main {
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 48px 24px 72px;
+      }
+
+      h1 {
+        margin: 0 0 28px;
+        font-family: "Newsreader", Georgia, serif;
+        font-size: 44px;
+        font-weight: 400;
+        letter-spacing: -0.03em;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 16px;
+      }
+
+      .theme {
+        border: 1px solid rgba(28, 41, 34, 0.14);
+        padding: 20px;
+      }
+
+      .theme.dark {
+        color: #f4ede1;
+        background: linear-gradient(180deg, #13231a, #07140e);
+      }
+
+      .swatch {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 54px;
+        margin-top: 10px;
+        padding: 12px;
+        border: 1px solid currentColor;
+        font-family: "IBM Plex Mono", ui-monospace, monospace;
+        font-size: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Cognisee Palette</h1>
+      <div class="grid">
+        <section class="theme dark">
+          <h2>Night</h2>
+          <div class="swatch" style="background:#091a11">Background <span>#091A11</span></div>
+          <div class="swatch" style="background:#f4ede1;color:#091a11">Text <span>#F4EDE1</span></div>
+          <div class="swatch" style="background:#a6d4bd;color:#091a11">Accent <span>#A6D4BD</span></div>
+          <div class="swatch" style="background:#b7de9d;color:#091a11">Green <span>#B7DE9D</span></div>
+          <div class="swatch" style="background:#f1be73;color:#091a11">Amber <span>#F1BE73</span></div>
+        </section>
+        <section class="theme">
+          <h2>Light</h2>
+          <div class="swatch" style="background:#f6f5eb">Background <span>#F6F5EB</span></div>
+          <div class="swatch" style="background:#1c2922;color:#f6f5eb">Text <span>#1C2922</span></div>
+          <div class="swatch" style="background:#286f61;color:#f6f5eb">Accent <span>#286F61</span></div>
+          <div class="swatch" style="background:#577f67;color:#f6f5eb">Green <span>#577F67</span></div>
+          <div class="swatch" style="background:#9d6619;color:#f6f5eb">Amber <span>#9D6619</span></div>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>

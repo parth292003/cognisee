@@ -1,0 +1,37 @@
+Cognisee font stack, May 2026
+
+Display:
+Newsreader
+Use for H1, H2, H3, and major editorial headings.
+Google Fonts specimen:
+https://fonts.google.com/specimen/Newsreader
+Source repository:
+https://github.com/productiontype/Newsreader
+
+Body:
+IBM Plex Sans
+Use for paragraphs, section copy, explanations, captions when not metadata.
+Google Fonts specimen:
+https://fonts.google.com/specimen/IBM+Plex+Sans
+Source repository:
+https://github.com/IBM/plex
+
+Mono / meta:
+IBM Plex Mono
+Use for nav, eyebrow, metadata, small labels, and technical links.
+Google Fonts specimen:
+https://fonts.google.com/specimen/IBM+Plex+Mono
+Source repository:
+https://github.com/IBM/plex
+
+Current web import:
+https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap
+
+Included local font files:
+- Newsreader variable roman and italic.
+- IBM Plex Sans Light, Regular, Medium, SemiBold.
+- IBM Plex Mono Regular, Medium.
+
+Licenses:
+- Newsreader is included with the SIL Open Font License file from the source repository.
+- IBM Plex files are included with the IBM Plex license file from the source repository.

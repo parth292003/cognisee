@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+
+  --cognisee-background: #f6f5eb;
+  --cognisee-background-top: #fbf9ef;
+  --cognisee-background-bottom: #eef2e4;
+
+  --cognisee-text: #1c2922;
+  --cognisee-heading: #142019;
+  --cognisee-body: rgba(28, 41, 34, 0.78);
+  --cognisee-muted: rgba(28, 41, 34, 0.62);
+  --cognisee-quiet: rgba(28, 41, 34, 0.48);
+  --cognisee-line: rgba(28, 41, 34, 0.08);
+  --cognisee-line-strong: rgba(28, 41, 34, 0.2);
+
+  --cognisee-accent: #286f61;
+  --cognisee-green-accent: #577f67;
+  --cognisee-amber: #9d6619;
+
+  --font-display: "Newsreader", "Source Serif 4", Georgia, serif;
+  --font-body: "IBM Plex Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", monospace;
+}
+
+/* Cognisee Official Milky Cream-Green Light Background */
+.cognisee-light-background {
+  background:
+    radial-gradient(
+      circle at 50% -9%,
+      rgba(255, 255, 250, 0.98) 0%,
+      rgba(255, 253, 243, 0.92) 19%,
+      rgba(246, 250, 235, 0.74) 38%,
+      rgba(222, 236, 216, 0.3) 62%,
+      transparent 79%
+    ),
+    linear-gradient(180deg, #fbf9ef 0%, #f6f5eb 46%, #eef2e4 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+/* Minimalist scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #f6f5eb;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(28, 41, 34, 0.15);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(28, 41, 34, 0.3);
+}
+
+/* Clean Editorial Typography */
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  letter-spacing: -0.025em;
+  color: var(--cognisee-heading);
+  text-wrap: balance;
+}
+
+p {
+  font-family: var(--font-body);
+}
+
+.font-editorial-serif {
+  font-family: 'Newsreader', Georgia, serif;
+}
+
+.font-editorial-sans {
+  font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.font-editorial-mono {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+}
+
+/* Sophisticated Glassmorphic Tokens */
+.glass-panel {
+  background: rgba(251, 249, 239, 0.72);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(28, 41, 34, 0.08);
+  box-shadow: 0 4px 24px -1px rgba(28, 41, 34, 0.03);
+}
+
+.glass-pill {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(28, 41, 34, 0.08);
+}
+
+.glass-nav {
+  background: rgba(251, 249, 239, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(28, 41, 34, 0.08);
+}

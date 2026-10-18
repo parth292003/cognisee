@@ -1,0 +1,41 @@
+{
+  "brand": "Cognisee",
+  "prepared": "2026-05-08",
+  "themes": {
+    "dark": {
+      "background": "#091A11",
+      "backgroundTop": "#13231A",
+      "backgroundMid": "#0B1A12",
+      "backgroundBottom": "#07140E",
+      "text": "#F4EDE1",
+      "heading": "#F6EFE5",
+      "body": "rgba(244, 237, 225, 0.78)",
+      "muted": "rgba(244, 237, 225, 0.66)",
+      "quiet": "rgba(244, 237, 225, 0.50)",
+      "line": "rgba(244, 237, 225, 0.14)",
+      "lineStrong": "rgba(244, 237, 225, 0.30)",
+      "accent": "#A6D4BD",
+      "greenAccent": "#B7DE9D",
+      "amber": "#F1BE73",
+      "selectionBackground": "#B7DE9D",
+      "selectionText": "#091A11"
+    },
+    "light": {
+      "background": "#F6F5EB",
+      "backgroundTop": "#FBF9EF",
+      "backgroundBottom": "#EEF2E4",
+      "text": "#1C2922",
+      "heading": "#142019",
+      "body": "rgba(28, 41, 34, 0.78)",
+      "muted": "rgba(28, 41, 34, 0.62)",
+      "quiet": "rgba(28, 41, 34, 0.48)",
+      "line": "rgba(28, 41, 34, 0.14)",
+      "lineStrong": "rgba(28, 41, 34, 0.28)",
+      "accent": "#286F61",
+      "greenAccent": "#577F67",
+      "amber": "#9D6619",
+      "selectionBackground": "#2F6F61",
+      "selectionText": "#FFFAF0"
+    }
+  }
+}
