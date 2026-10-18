@@ -179,6 +179,73 @@ function sdfDNA(x, y, z) {
   return dHelix;
 }
 
+
+// 3. Humanoid Autonomous Robotics & Bionic Android
+function sdfRobot(x, y, z) {
+  const ax = Math.abs(x);
+  const az = Math.abs(z);
+
+  // 1. Head / Helmet
+  // Cranium: rounded head centered at y = 0.58
+  const dHead = Math.hypot(x, y - 0.58, z) - 0.135;
+  // Visor optics horizontal bar (facing front z > 0)
+  const dVisor = Math.max(Math.hypot(x, y - 0.58), Math.max(-z + 0.09, z - 0.145)) - 0.055;
+  // Side audio/sensor antenna nodes
+  const dEars = Math.hypot(ax - 0.14, y - 0.58, z) - 0.038;
+  const headPart = Math.min(dHead, dVisor, dEars);
+
+  // 2. Cervical Neck Collar
+  const dNeck = Math.hypot(x, z) - 0.055;
+  const neckPart = Math.max(dNeck, Math.max(0.42 - y, y - 0.49));
+
+  // 3. Torso & Power Core
+  // Upper Chest / Armor Plate (y from 0.16 to 0.42, broader at top)
+  const chestW = 0.26 - 0.06 * ((0.42 - y) / 0.26);
+  const dChest = Math.max(ax - chestW, Math.max(az - 0.11, Math.max(0.16 - y, y - 0.42)));
+  // Central Power Core Node / Arc Reactor
+  const dCore = Math.hypot(x, y - 0.29, z - 0.10) - 0.048;
+  // Spine / Midsection (y from -0.06 to 0.16)
+  const dSpine = Math.hypot(x, z) - 0.095;
+  const spinePart = Math.max(dSpine, Math.max(-0.06 - y, y - 0.16));
+  // Pelvis / Waist chassis (y from -0.22 to -0.06)
+  const dPelvis = Math.max(ax - 0.21, Math.max(az - 0.11, Math.max(-0.22 - y, y - (-0.06))));
+  const torsoPart = Math.min(dChest, dCore, spinePart, dPelvis);
+
+  // 4. Arms & Manipulators
+  // Shoulder Pauldrons / Ball joints
+  const dShoulder = Math.hypot(ax - 0.32, y - 0.36, z) - 0.068;
+  // Upper Arms (capsule from (0.33, 0.33, 0) to (0.35, 0.10, 0.02))
+  const tArm1 = Math.max(0, Math.min(1, (0.33 - y) / 0.23));
+  const arm1X = 0.33 + 0.02 * tArm1;
+  const arm1Z = 0.02 * tArm1;
+  const dUpperArm = Math.hypot(ax - arm1X, y - (0.33 - 0.23 * tArm1), z - arm1Z) - 0.042;
+  // Elbow Joint
+  const dElbow = Math.hypot(ax - 0.35, y - 0.09, z - 0.02) - 0.046;
+  // Forearms (from (0.35, 0.07, 0.02) to (0.33, -0.18, 0.06))
+  const tArm2 = Math.max(0, Math.min(1, (0.07 - y) / 0.25));
+  const arm2X = 0.35 - 0.02 * tArm2;
+  const arm2Z = 0.02 + 0.04 * tArm2;
+  const dForearm = Math.hypot(ax - arm2X, y - (0.07 - 0.25 * tArm2), z - arm2Z) - 0.038;
+  // Hands / Bionic Manipulators
+  const dHands = Math.hypot(ax - 0.32, y - (-0.24), z - 0.07) - 0.035;
+  const armPart = Math.min(dShoulder, dUpperArm, dElbow, dForearm, dHands);
+
+  // 5. Lower Chassis / Bionic Legs
+  // Hip Joints
+  const dHips = Math.hypot(ax - 0.13, y - (-0.23), z) - 0.055;
+  // Thighs (y from -0.52 to -0.25)
+  const dThigh = Math.max(Math.hypot(ax - 0.13, z) - 0.058, Math.max(-0.52 - y, y - (-0.25)));
+  // Knee Joints
+  const dKnee = Math.hypot(ax - 0.13, y - (-0.54), z - 0.01) - 0.055;
+  // Calves / Lower Legs (y from -0.82 to -0.56)
+  const dCalf = Math.max(Math.hypot(ax - 0.13, z) - 0.050, Math.max(-0.82 - y, y - (-0.56)));
+  // Foot Pads (y from -0.89 to -0.82, z from -0.06 to 0.10)
+  const dFoot = Math.max(ax - 0.13 - 0.045, Math.max(Math.abs(z - 0.02) - 0.08, Math.max(-0.89 - y, y - (-0.82))));
+  const legPart = Math.min(dHips, dThigh, dKnee, dCalf, dFoot);
+
+  return Math.min(headPart, neckPart, torsoPart, armPart, legPart);
+}
+
 // 3. Slim, Soaring Modern Skyscraper (Architecture & Infrastructure)
 function sdfBuilding(x, y, z) {
   if (y < -0.82 || y > 0.90) return Math.max(-0.82 - y, y - 0.90);
@@ -225,6 +292,7 @@ function sdfEmpty(x, y, z) {
 const volumes = [
   { name: "aircraft.bin", fn: sdfCommercialPlane },
   { name: "dna.bin", fn: sdfDNA },
+  { name: "robot.bin", fn: sdfRobot },
   { name: "building.bin", fn: sdfBuilding },
   { name: "video.bin", fn: sdfEmpty }
 ];
